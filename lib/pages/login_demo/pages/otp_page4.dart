@@ -26,7 +26,7 @@ class _OtpPage4State extends State<OtpPage4>
   String? _otpValidator(String? value) {
     if (value == null || value.isEmpty) {
       return "Required OTP";
-    } else if (value == "0000" && value.length == 4) {
+    } else if (value == "00000" && value.length == 5) {
       Navigator.push(context, MaterialPageRoute(builder: (_) => HomePage()));
     } else {
       return "Invalid OTP";
