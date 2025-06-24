@@ -1,5 +1,3 @@
-import 'package:custom_table/pages/login_demo/pages/login_page.dart';
-import 'package:custom_table/pages/login_demo/pages/otp_page3.dart';
 import 'package:custom_table/pages/login_demo/pages/otp_page4.dart';
 import 'package:flutter/material.dart';
 
