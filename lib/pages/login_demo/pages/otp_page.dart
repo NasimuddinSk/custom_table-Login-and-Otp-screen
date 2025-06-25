@@ -41,7 +41,7 @@ class _OtpPageState extends State<OtpPage> {
 
   void _submit() {
     if (_formKey.currentState!.validate()) {
-      Navigator.push(context, MaterialPageRoute(builder: (_) => HomePage()));
+      Navigator.push(context, MaterialPageRoute(builder: (_) => const HomePage()));
     }
   }
 
@@ -61,7 +61,7 @@ class _OtpPageState extends State<OtpPage> {
               ),
             ),
           ),
-          Center(
+          const Center(
             child: Text(
               "End with: +91xxxxxxxx85",
               style: TextStyle(
@@ -71,7 +71,7 @@ class _OtpPageState extends State<OtpPage> {
               ),
             ),
           ),
-          SizedBox(height: 20),
+          const SizedBox(height: 20),
           Form(
             key: _formKey,
             child: Column(
@@ -102,17 +102,17 @@ class _OtpPageState extends State<OtpPage> {
                   ],
                 ),
 
-                SizedBox(height: 20),
+                const SizedBox(height: 20),
                 ElevatedButton(
                   onPressed: () {
                     _submit();
                   },
                   style: ElevatedButton.styleFrom(
-                    minimumSize: Size(300, 50),
+                    minimumSize: const Size(300, 50),
                     backgroundColor: Colors.green,
                     foregroundColor: Colors.white,
                   ),
-                  child: Text(
+                  child: const Text(
                     "Verify",
                     style: TextStyle(fontWeight: FontWeight.bold, fontSize: 16),
                   ),

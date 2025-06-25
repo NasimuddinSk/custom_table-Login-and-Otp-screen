@@ -27,7 +27,7 @@ class _OtpPage4State extends State<OtpPage4>
     if (value == null || value.isEmpty) {
       return "Required OTP";
     } else if (value == "00000" && value.length == 5) {
-      Navigator.push(context, MaterialPageRoute(builder: (_) => HomePage()));
+      Navigator.push(context, MaterialPageRoute(builder: (_) => const HomePage()));
     } else {
       return "Invalid OTP";
     }
@@ -50,7 +50,7 @@ class _OtpPage4State extends State<OtpPage4>
     resendTime?.cancel();
     _timer = _finalSecound;
 
-    resendTime = Timer.periodic(Duration(seconds: 1), (timer) {
+    resendTime = Timer.periodic(const Duration(seconds: 1), (timer) {
       setState(() {
         if (_timer > 0) {
           _timer--;
@@ -76,7 +76,7 @@ class _OtpPage4State extends State<OtpPage4>
     Size mq = MediaQuery.of(context).size;
 
     return Scaffold(
-      backgroundColor: Color(0xff551C8B),
+      backgroundColor: const Color(0xff551C8B),
       body: SingleChildScrollView(
         child: Column(
           children: [
@@ -86,7 +86,7 @@ class _OtpPage4State extends State<OtpPage4>
                 width: 100,
                 height: 100,
                 decoration: BoxDecoration(
-                  color: Colors.red.withValues(alpha: 0.03),
+                  color: Colors.red.withOpacity(0.2),
                   borderRadius: BorderRadius.circular(100),
                 ),
                 child: Center(
@@ -100,7 +100,6 @@ class _OtpPage4State extends State<OtpPage4>
               ),
             ),
             SizedBox(height: mq.height * 0.01),
-
             Text(
               "OTP",
               style: GoogleFonts.inter(
@@ -109,7 +108,6 @@ class _OtpPage4State extends State<OtpPage4>
                 fontSize: 25,
               ),
             ),
-
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 30),
               child: Text(
@@ -119,7 +117,6 @@ class _OtpPage4State extends State<OtpPage4>
               ),
             ),
             SizedBox(height: mq.height * 0.01),
-
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 30),
               child: Text(
@@ -132,13 +129,11 @@ class _OtpPage4State extends State<OtpPage4>
                 ),
               ),
             ),
-
             SizedBox(height: mq.height * 0.07),
             Container(
               width: mq.width,
               height: mq.height * .60,
-
-              decoration: BoxDecoration(
+              decoration: const BoxDecoration(
                 color: Colors.white,
                 borderRadius: BorderRadius.only(topLeft: Radius.circular(80)),
               ),
@@ -148,21 +143,19 @@ class _OtpPage4State extends State<OtpPage4>
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     Pinput(
-                      errorBuilder:
-                          (errorText, pin) => Text(
-                            errorText ?? "",
-                            style: GoogleFonts.inter(
-                              fontSize: 12,
-                              color: Colors.redAccent,
-                              fontWeight: FontWeight.w500,
-                            ),
-                          ),
+                      errorBuilder: (errorText, pin) => Text(
+                        errorText ?? "",
+                        style: GoogleFonts.inter(
+                          fontSize: 12,
+                          color: Colors.redAccent,
+                          fontWeight: FontWeight.w500,
+                        ),
+                      ),
                       separatorBuilder: (index) {
                         return SizedBox(width: mq.width * .03);
                       },
                       controller: pinController,
                       focusNode: focusNode,
-
                       validator: _otpValidator,
                       length: 5,
                       defaultPinTheme: PinTheme(
@@ -178,53 +171,50 @@ class _OtpPage4State extends State<OtpPage4>
                       ),
                     ),
                     SizedBox(height: mq.height * 0.07),
-
                     isTimerRunning
                         ? Text(
-                          "Resend in ${formatTime(_timer)}s",
-                          style: GoogleFonts.inter(
-                            fontSize: 15,
-                            fontWeight: FontWeight.bold,
-                            color: Colors.black,
-                          ),
-                        )
-                        : Column(
-                          children: [
-                            Text(
-                              "Don't recevied OTP ?",
-                              style: GoogleFonts.inter(
-                                color: Colors.black87,
-                                fontSize: 14,
-                              ),
+                            "Resend in ${formatTime(_timer)}s",
+                            style: GoogleFonts.inter(
+                              fontSize: 15,
+                              fontWeight: FontWeight.bold,
+                              color: Colors.black,
                             ),
-                            SizedBox(height: mq.height * 0.01),
-
-                            InkWell(
-                              onTap: () {
-                                resendTimer();
-                                isTimerRunning = true;
-                              },
-                              child: Text(
-                                "Resend OTP",
+                          )
+                        : Column(
+                            children: [
+                              Text(
+                                "Don't recevied OTP ?",
                                 style: GoogleFonts.inter(
-                                  color: Colors.black,
-                                  fontWeight: FontWeight.bold,
-                                  fontSize: 18,
-                                  decoration: TextDecoration.underline,
-                                  decorationColor: Colors.black,
+                                  color: Colors.black87,
+                                  fontSize: 14,
                                 ),
                               ),
-                            ),
-                          ],
-                        ),
+                              SizedBox(height: mq.height * 0.01),
+                              InkWell(
+                                onTap: () {
+                                  resendTimer();
+                                  isTimerRunning = true;
+                                },
+                                child: Text(
+                                  "Resend OTP",
+                                  style: GoogleFonts.inter(
+                                    color: Colors.black,
+                                    fontWeight: FontWeight.bold,
+                                    fontSize: 18,
+                                    decoration: TextDecoration.underline,
+                                    decorationColor: Colors.black,
+                                  ),
+                                ),
+                              ),
+                            ],
+                          ),
                     SizedBox(height: mq.height * 0.07),
-
                     ElevatedButton(
                       style: ElevatedButton.styleFrom(
                         shape: ContinuousRectangleBorder(
                           borderRadius: BorderRadius.circular(20),
                         ),
-                        backgroundColor: Color(0xff551C8B),
+                        backgroundColor: const Color(0xff551C8B),
                         foregroundColor: Colors.white,
                         minimumSize: Size(mq.width * .6, mq.height * .05),
                       ),

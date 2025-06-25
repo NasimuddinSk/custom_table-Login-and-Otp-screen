@@ -82,7 +82,7 @@ class _HomePageState extends State<HomePage> {
             child: Row(
               children: [
                 Container(
-                  margin: EdgeInsets.only(),
+                  margin: const EdgeInsets.only(),
                   color: Colors.amber,
                   height: 100,
                   width: 80,
@@ -97,7 +97,7 @@ class _HomePageState extends State<HomePage> {
                         children: [
                           for (var i = 0; i < 11; i++)
                             Container(
-                              margin: EdgeInsets.only(left: 10),
+                              margin: const EdgeInsets.only(left: 10),
                               color: Colors.black,
                               width: 80,
                               height: 100,
@@ -111,13 +111,13 @@ class _HomePageState extends State<HomePage> {
             ),
           ),
 
-          SizedBox(height: 5),
+          const SizedBox(height: 5),
 
           Expanded(
             child: Row(
               children: [
                 Padding(
-                  padding: EdgeInsets.only(left: 10),
+                  padding: const EdgeInsets.only(left: 10),
                   child: ScrollConfiguration(
                     behavior: DisableScrollEffects(),
                     child: SingleChildScrollView(
@@ -129,7 +129,7 @@ class _HomePageState extends State<HomePage> {
                               color: Colors.green,
                               width: 80,
                               height: 100,
-                              margin: EdgeInsets.only(top: 5),
+                              margin: const EdgeInsets.only(top: 5),
                             ),
                         ],
                       ),
@@ -155,7 +155,7 @@ class _HomePageState extends State<HomePage> {
                                   children: [
                                     for (var j = 0; j < 5; j++)
                                       Container(
-                                        margin: EdgeInsets.only(
+                                        margin: const EdgeInsets.only(
                                           top: 5,
                                           left: 10,
                                         ),
@@ -193,6 +193,6 @@ class DisableScrollEffects extends ScrollBehavior {
 
   @override
   ScrollPhysics getScrollPhysics(BuildContext context) {
-    return ClampingScrollPhysics();
+    return const ClampingScrollPhysics();
   }
 }

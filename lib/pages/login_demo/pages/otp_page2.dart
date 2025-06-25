@@ -53,7 +53,7 @@ class _OtpPage2State extends State<OtpPage2>
     _timer = 15;
     _controller.reset(); // stop and rewind
     _controller.forward(from: 0); // restart from 0
-    resendTime = Timer.periodic(Duration(seconds: 1), (timer) {
+    resendTime = Timer.periodic(const Duration(seconds: 1), (timer) {
       setState(() {
         if (_timer > 0) {
           _timer--;
@@ -71,7 +71,7 @@ class _OtpPage2State extends State<OtpPage2>
     if (value == null || value.isEmpty) {
       return "Required OTP";
     } else if (value == "0000" && value.length == 4) {
-      Navigator.push(context, MaterialPageRoute(builder: (_) => HomePage()));
+      Navigator.push(context, MaterialPageRoute(builder: (_) => const HomePage()));
     } else {
       return "Invalid OTP";
     }
@@ -119,7 +119,7 @@ class _OtpPage2State extends State<OtpPage2>
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            SizedBox(height: 50),
+            const SizedBox(height: 50),
 
             Column(
               crossAxisAlignment: CrossAxisAlignment.start,
@@ -134,7 +134,7 @@ class _OtpPage2State extends State<OtpPage2>
                   style: GoogleFonts.timmana(
                     fontSize: 14,
                     fontWeight: FontWeight.bold,
-                    color: Color(0xff323232),
+                    color: const Color(0xff323232),
                   ),
                 ),
                 Text(
@@ -148,7 +148,7 @@ class _OtpPage2State extends State<OtpPage2>
               ],
             ),
 
-            SizedBox(height: 30),
+            const SizedBox(height: 30),
             Form(
               key: formKey,
               child: Center(
@@ -191,7 +191,7 @@ class _OtpPage2State extends State<OtpPage2>
                           ),
                           focusedPinTheme: defaultPinTheme.copyWith(
                             decoration: defaultPinTheme.decoration!.copyWith(
-                              color: Color.fromARGB(255, 20, 153, 255),
+                              color: const Color.fromARGB(255, 20, 153, 255),
                               borderRadius: BorderRadius.circular(16),
                               border: Border.all(color: focusedBorderColor),
                             ),
@@ -219,7 +219,7 @@ class _OtpPage2State extends State<OtpPage2>
                       ],
                     ),
 
-                    SizedBox(height: 10),
+                    const SizedBox(height: 10),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
@@ -237,7 +237,7 @@ class _OtpPage2State extends State<OtpPage2>
                                         _controller.value,
                                         _controller.value + 0.001,
                                       ],
-                                      colors: [
+                                      colors: const [
                                         Colors.blue, // Filled part
                                         Color(0xff323232), // Unfilled part
                                       ],
@@ -274,7 +274,7 @@ class _OtpPage2State extends State<OtpPage2>
                                   style: GoogleFonts.timmana(
                                     fontSize: 13,
                                     fontWeight: FontWeight.bold,
-                                    color: Color(0xff323232),
+                                    color: const Color(0xff323232),
                                   ),
                                 ),
                                 InkWell(
@@ -296,24 +296,24 @@ class _OtpPage2State extends State<OtpPage2>
                               ],
                             ),
 
-                        Spacer(),
+                        const Spacer(),
                       ],
                     ),
-                    SizedBox(height: 30),
+                    const SizedBox(height: 30),
 
                     Row(
                       mainAxisAlignment: MainAxisAlignment.end,
                       children: [
-                        Spacer(flex: 5),
+                        const Spacer(flex: 5),
                         ElevatedButton(
                           style: ElevatedButton.styleFrom(
-                            backgroundColor: Color(0xff323232),
+                            backgroundColor: const Color(0xff323232),
                             foregroundColor: Colors.white,
                           ),
                           onPressed: _submit,
                           child: Text("Verify", style: GoogleFonts.timmana()),
                         ),
-                        Spacer(),
+                        const Spacer(),
                       ],
                     ),
                   ],

@@ -49,7 +49,7 @@ class _OtpPage3State extends State<OtpPage3>
     _timer = _finalSecound;
     _controller.reset(); // stop and rewind
     _controller.forward(from: 0); // restart from 0
-    resendTime = Timer.periodic(Duration(seconds: 1), (timer) {
+    resendTime = Timer.periodic(const Duration(seconds: 1), (timer) {
       setState(() {
         if (_timer > 0) {
           _timer--;
@@ -107,7 +107,7 @@ class _OtpPage3State extends State<OtpPage3>
                     width: 30,
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(5),
-                      color: Color.fromARGB(65, 96, 96, 96),
+                      color: const Color.fromARGB(65, 96, 96, 96),
                       border: Border.all(
                         color: const Color.fromARGB(106, 96, 96, 96),
                       ),
@@ -120,7 +120,7 @@ class _OtpPage3State extends State<OtpPage3>
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    Spacer(),
+                    const Spacer(),
 
                     isTimerRunning
                         // For animation of left to right -----------------------------------------
@@ -136,7 +136,7 @@ class _OtpPage3State extends State<OtpPage3>
                                     _controller.value,
                                     _controller.value + 0.001,
                                   ],
-                                  colors: [
+                                  colors: const [
                                     Colors.blueAccent, // Filled part
                                     Color(0xff323232), // Unfilled part
                                   ],
@@ -173,7 +173,7 @@ class _OtpPage3State extends State<OtpPage3>
                               style: GoogleFonts.inter(
                                 fontSize: 10,
                                 fontWeight: FontWeight.bold,
-                                color: Color(0xff323232),
+                                color: const Color(0xff323232),
                               ),
                             ),
                             InkWell(
@@ -195,7 +195,7 @@ class _OtpPage3State extends State<OtpPage3>
                           ],
                         ),
 
-                    Spacer(),
+                    const Spacer(),
                   ],
                 ),
               ],
@@ -205,7 +205,7 @@ class _OtpPage3State extends State<OtpPage3>
 
           ElevatedButton(
             style: ElevatedButton.styleFrom(
-              backgroundColor: Color(0xff323232),
+              backgroundColor: const Color(0xff323232),
               foregroundColor: Colors.white,
               shape: ContinuousRectangleBorder(
                 borderRadius: BorderRadius.circular(5),
@@ -218,7 +218,7 @@ class _OtpPage3State extends State<OtpPage3>
               style: GoogleFonts.inter(fontWeight: FontWeight.w500),
             ),
           ),
-          Spacer(flex: 5),
+          const Spacer(flex: 5),
           Text(
             textAlign: TextAlign.center,
             "Please check your spam forder if not showing email in Inbox",
@@ -228,7 +228,7 @@ class _OtpPage3State extends State<OtpPage3>
               wordSpacing: 2,
             ),
           ),
-          Spacer(),
+          const Spacer(),
         ],
       ),
     );

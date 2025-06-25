@@ -40,7 +40,7 @@ class _LoginPageState extends State<LoginPage> {
 
   void _submit() {
     if (_formKey.currentState!.validate()) {
-      Navigator.push(context, MaterialPageRoute(builder: (_) => OtpPage3()));
+      Navigator.push(context, MaterialPageRoute(builder: (_) => const OtpPage3()));
     }
   }
 
@@ -50,7 +50,7 @@ class _LoginPageState extends State<LoginPage> {
       body: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          Center(
+          const Center(
             child: Text(
               "Login",
               style: TextStyle(
@@ -66,7 +66,7 @@ class _LoginPageState extends State<LoginPage> {
               children: [
                 // Email TextFormField
                 Container(
-                  margin: EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+                  margin: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
                   child: TextFormField(
                     keyboardType: TextInputType.emailAddress,
                     controller: _emailController,
@@ -80,30 +80,30 @@ class _LoginPageState extends State<LoginPage> {
                     decoration: InputDecoration(
                       border: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(12.0),
-                        borderSide: BorderSide(width: 0.5, color: Colors.grey),
+                        borderSide: const BorderSide(width: 0.5, color: Colors.grey),
                       ),
                       enabledBorder: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(12.0),
-                        borderSide: BorderSide(width: 0.5, color: Colors.grey),
+                        borderSide: const BorderSide(width: 0.5, color: Colors.grey),
                       ),
                       focusedBorder: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(12.0),
-                        borderSide: BorderSide(width: 0.5, color: Colors.teal),
+                        borderSide: const BorderSide(width: 0.5, color: Colors.teal),
                       ),
                       errorBorder: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(12.0),
-                        borderSide: BorderSide(width: 0.5, color: Colors.red),
+                        borderSide: const BorderSide(width: 0.5, color: Colors.red),
                       ),
                       isDense: true,
-                      prefixIcon: Icon(Icons.mail_rounded),
-                      label: Text("Email"),
+                      prefixIcon: const Icon(Icons.mail_rounded),
+                      label: const Text("Email"),
                     ),
                   ),
                 ),
 
                 // Password TextFormField
                 Container(
-                  margin: EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+                  margin: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
                   child: TextFormField(
                     obscureText: isPass,
                     controller: _passwordController,
@@ -113,7 +113,7 @@ class _LoginPageState extends State<LoginPage> {
                     },
                     decoration: InputDecoration(
                       isDense: true,
-                      prefixIcon: Icon(Icons.lock),
+                      prefixIcon: const Icon(Icons.lock),
                       suffixIcon: IconButton(
                         onPressed: () {
                           setState(() {
@@ -124,29 +124,29 @@ class _LoginPageState extends State<LoginPage> {
                           isPass ? Icons.visibility : Icons.visibility_off,
                         ),
                       ),
-                      label: Text("Password"),
+                      label: const Text("Password"),
 
                       border: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(12.0),
-                        borderSide: BorderSide(width: 0.5, color: Colors.grey),
+                        borderSide: const BorderSide(width: 0.5, color: Colors.grey),
                       ),
                       enabledBorder: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(12.0),
-                        borderSide: BorderSide(width: 0.5, color: Colors.grey),
+                        borderSide: const BorderSide(width: 0.5, color: Colors.grey),
                       ),
                       focusedBorder: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(12.0),
-                        borderSide: BorderSide(width: 0.5, color: Colors.teal),
+                        borderSide: const BorderSide(width: 0.5, color: Colors.teal),
                       ),
                       errorBorder: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(12.0),
-                        borderSide: BorderSide(width: 0.5, color: Colors.red),
+                        borderSide: const BorderSide(width: 0.5, color: Colors.red),
                       ),
                     ),
                   ),
                 ),
 
-                SizedBox(height: 20),
+                const SizedBox(height: 20),
                 ElevatedButton(
                   onPressed: () {
                     _submit();
@@ -156,11 +156,11 @@ class _LoginPageState extends State<LoginPage> {
                     // );
                   },
                   style: ElevatedButton.styleFrom(
-                    minimumSize: Size(300, 50),
-                    backgroundColor: Color(0xff323232),
+                    minimumSize: const Size(300, 50),
+                    backgroundColor: const Color(0xff323232),
                     foregroundColor: Colors.white,
                   ),
-                  child: Text(
+                  child: const Text(
                     "Login",
                     style: TextStyle(fontWeight: FontWeight.bold, fontSize: 16),
                   ),
